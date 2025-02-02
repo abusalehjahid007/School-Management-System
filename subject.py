@@ -1,4 +1,3 @@
-from person import Teacher
 from school import School
 
 class Subject:
@@ -8,10 +7,10 @@ class Subject:
         self.max_marks = 100
         self.pass_marks = 33
     
-    def exam(slef, students):
+    def exam(self, students):
         for student in students:
-            mark = Teacher.evaluate_exam()
-            student.marks[slef.name] = mark
-            student.subject_grade[slef.name] = School.calculate_grade(mark)
+            mark = self.teacher.evaluate_exam()
+            student.marks[self.name] = mark
+            student.subject_grade[self.name] = School.calculate_grade(mark)
             
             

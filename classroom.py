@@ -16,6 +16,6 @@ class Classroom:
         for subject in self.subjects:
             subject.exam(self.students)
         for student in self.students:
-              student.calculate_fial_grade()
+            student.calculate_fial_grade()
         
         

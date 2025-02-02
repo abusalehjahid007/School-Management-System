@@ -9,8 +9,8 @@ class School:
     def add_classroom(self, classroom):
         self.classrooms[classroom.name] = classroom
     
-    def add_teacher(self, subjrct, teacher):
-        self.teachers[subjrct.name] = teacher
+    def add_teacher(self, subject, teacher):
+        self.teachers[subject.name] = teacher
     
     def student_admission(self, student):
         classname = student.classroom.name
@@ -79,24 +79,22 @@ class School:
         print("All Students Result")
         for key, val in self.classrooms.items():
             for st in val.students:
-                for k,i in student.marks.items():
-                    print(student.name, k, i, student.subject_grade[k])
-                print(student.calculate_final_grade())
+                for k,i in st.marks.items():
+                    print(st.name, k, i, st.subject_grade[k])
+                print(st.calculate_fial_grade())
         
         print("All Subjects")
         subject = ''
         for key, val in self.classrooms.items():
             subject += f"----{key.upper()} Classroom Subjects\n"
             for sub in val.subjects:
-                result += f"{sub.name}\n"
+                subject += f"{sub.name}\n"
         print(subject)
         
         print("All Teachers")
-        for key, val in self.teachers.items():
-            print(key)
+        for subject_name, teacher in self.teachers.items():
+            print(f"Subject: {subject_name}, Teacher: {teacher.name}") 
             
-            
-        
         return ""
     
         
