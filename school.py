@@ -4,7 +4,7 @@ class School:
         self.name = name
         self.address = address
         self.teachers = {}
-        self.calssrooms = {}
+        self.classrooms = {}
         
     def add_classroom(self, classroom):
         self.classrooms[classroom.name] = classroom
@@ -13,7 +13,8 @@ class School:
         self.teachers[subjrct.name] = teacher
     
     def student_admission(self, student):
-        pass
+        classname = student.classroom.name
+        self.classrooms[classname].add_student(student)
         
     @staticmethod
     def calculate_grade(marks):
@@ -63,4 +64,39 @@ class School:
             return 'F'
         
     def __repr__(self):
-        pass
+        print("All Classrooms")
+        for key in self.classrooms.keys():
+            print(key)
+            
+        print("All Students")
+        result = ''
+        for key, val in self.classrooms.items():
+            result += f"----{key.upper()} Classroom Students\n"
+            for student in val.students:
+                result += f"{student.name}\n"
+        print(result)
+        
+        print("All Students Result")
+        for key, val in self.classrooms.items():
+            for st in val.students:
+                for k,i in student.marks.items():
+                    print(student.name, k, i, student.subject_grade[k])
+                print(student.calculate_final_grade())
+        
+        print("All Subjects")
+        subject = ''
+        for key, val in self.classrooms.items():
+            subject += f"----{key.upper()} Classroom Subjects\n"
+            for sub in val.subjects:
+                result += f"{sub.name}\n"
+        print(subject)
+        
+        print("All Teachers")
+        for key, val in self.teachers.items():
+            print(key)
+            
+            
+        
+        return ""
+    
+        
